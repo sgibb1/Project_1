@@ -1,61 +1,87 @@
-userChoice = prompt("Pick either rock, paper or scissors.");
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+let tieScore = parseInt(0);
 
-computerChoice = Math.floor(Math.random() * 2);
-console.log(computerChoice);
+let games = parseInt(prompt("How many games would you like to play?"));
 
-// Computer choice for RPS
-if (computerChoice == 0) {
-  computerChoice = "Rock"
-}
-else if (computerChoice == 1) {
-  computerChoice = "Paper"
-}
-else if (computerChoice == 2) {
-  computerChoice = "Scissors"
-} console.log("Computer: " + computerChoice);
+let userChoice = prompt("Please pick rock, paper or scissors");
 
-// Results
-if (userChoice === "Scissors") {
-  if (computerChoice === "Paper") {
-    userScore++;
+function computerPlay() {
+  computerChoice = Math.floor(Math.random() * 3);
+  console.log(computerChoice);
+
+  if (computerChoice == 0) {
+    computerChoice = "rock";
+  } else if (computerChoice == 1) {
+    computerChoice = "paper";
+  } else if (computerChoice == 2) {
+    computerChoice = "scissors";
   }
-  else if (userChoice === "Scissors") {
-    if (computerChoice === "Rock")
+}
+
+function playGame(userChoice, computerChoice) {
+  if (userChoice === "rock") {
+    if (computerChoice === "rock") {
+      tieScore++;
+    } else if (computerChoice === "paper") {
       computerScore++;
-  }
-  else if (userChoice === "Scissors") {
-    if (computerChoice === "Scissors")
-      tie++
-  }
-}
-
-if (userChoice === "Rock") {
-  if (computerChoice === "Scissors") {
-    userScore++;
-  }
-  else if (userChoice === "Rock") {
-    if (computerChoice === "Paper")
-      computerScore++;
-  }
-  else if (userChoice === "Rock") {
-    if (computerChoice === "Rock") {
-      tie++;
+    } else if (computerChoice === "scissors") {
+      userScore++;
     }
   }
 }
 
-if (userChoice === "Paper") {
-  if (computerChoice === "Rock") {
+if (userChoice === "paper") {
+  if (computerChoice === "paper") {
+    tieScore++;
+  } else if (computerChoice === "scissors") {
+    computerScore++;
+  } else if (computerChoice === "rock") {
     userScore++;
   }
-  else if (userChoice === "Paper") {
-    if (computerChoice === "Scissors") {
-      computerScore++;
-    }
-    else if (userChoice === "Paper") {
-      if (computerChoice === "Paper") {
-        tie++;
-      }
-    }
+}
+
+if (userChoice === "scissors") {
+  if (computerChoice === "scissors") {
+    tieScore++;
+  } else if (computerChoice === "rock") {
+    computerScore++;
+  } else if (computerChoice === "paper") {
+    userScore++;
   }
+}
+
+for (var i = 0; i > games; i++) {
+  let userChoice = prompt("Please pick rock, paper or scissors");
+  const computerChoice = computerPlay()
+  console.log(playGame(userChoice, computerChoice))
+}
+
+alert("Your score: " + userScore);
+alert("Computer score: " + computerScore);
+alert("Tie games: " + tieScore);
+
+
+
+// let games = parseInt(prompt ("How many games would you like to play?"))
+// for (let i = 0; i < games; i++)
+
+//userChoice = prompt("Do you choose rock, paper or scissors?");
+
+//function results() {
+//  if (computerChoice === userChoice) {
+//    return result = 'You tied!'
+//  } else if (computerChoice === 'rock' && userChoice === 'paper') { 
+//    return result = 'You win!'
+//  } else if (computerChoice === 'rock' && userChoice === 'scissors') {
+//    return result = 'You lose'
+//  } else if (computerChoice === 'paper' && userChoice === 'rock') {
+//   return result = 'You lose'
+//  } else if (computerChoice === 'paper' && userChoice === 'scissors') {
+//   return result = 'You win!'
+//  } else if (computerChoice === 'scissor' && userChoice === 'rock') {
+//    return result = 'You win!'
+//  } else if (computerChoice === 'scissor' && userChoice === 'paper') {
+//    return result = 'You lose'
+//  }
 }
