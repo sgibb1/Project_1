@@ -85,25 +85,5 @@ alert("Tie games: " + tieScore);
 //  } else if (computerChoice === 'scissor' && userChoice === 'paper') {
 //    return result = 'You lose'
 //  }
-}
-=======
-//////// Comparing Users Choice to Computer
+//}
 
-function results() {
-  if (computerChoice === userChoice) {
-    return result = 'You tied!'
-  } else if (computerChoice === 'rock' && userChoice === 'paper') { 
-    return result = 'You win!'
-  } else if (computerChoice === 'rock' && userChoice === 'scissors') {
-    return result = 'You lose'
-  } else if (computerChoice === 'paper' && userChoice === 'rock') {
-   return result = 'You lose'
-  } else if (computerChoice === 'paper' && userChoice === 'scissors') {
-   return result = 'You win!'
-  } else if (computerChoice === 'scissor' && userChoice === 'rock') {
-    return result = 'You win!'
-  } else if (computerChoice === 'scissor' && userChoice === 'paper') {
-    return result = 'You lose'
-  }
-}
->>>>>>> 9011e0d9851935b5af68f66e12d546620b056416
