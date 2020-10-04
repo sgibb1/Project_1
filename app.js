@@ -1,11 +1,11 @@
-let userScore = parseInt(0);
-let computerScore = parseInt(0);
-let tieScore = parseInt(0);
+let userScore = 0;
+let computerScore = 0;
+let tieScore = 0;
 let win = "You Win!"
 let lose = "You Lose!"
 let tie = "Tie Game!"
 
-let games = parseInt(prompt("How many games would you like to play?"));
+let games = prompt("How many games would you like to play?"));
 for (var i = 0; i < games; i++) {
   let userSelection = prompt("Pick rock, paper, or scissors.");
   const computerSelection = computerPlay()
@@ -34,39 +34,39 @@ function playRound(userSelection, computerSelection) {
   if (userSelection === "rock") {
     if (computerSelection === "paper") {
       computerScore++;
-      return lose;
+      alert lose;
     } else if (computerSelection === "rock") {
       tieScore++;
-      return tie;
+      alert tie;
     } else if (computerSelection === "scissors") {
       userScore++;
-      return win;
+      alert win;
     }
   }
-}
 
 if (userSelection === "scissors") {
   if (computerSelection === "paper") {
     userScore++;
-    return win;
+    alert win;
   } else if (computerSelection === "rock") {
     computerScore++;
-    return lose;
+    alert lose;
   } else if (computerSelection === "scissors") {
     tieScore++;
-    return tie;
+    alert tie;
   }
 }
 
 if (userSelection === "paper") {
   if (computerSelection === "paper") {
     tieScore++;
-    return tie;
+    alert tie;
   } else if (computerSelection === "rock") {
     userScore++;
-    return win;
+    alert win;
   } else if (computerSelection === "scissors") {
     computerScore++;
-    return lose;
+    alert lose;
   }
+ }
 }
