@@ -5,11 +5,11 @@ let win = "You Win!"
 let lose = "You Lose!"
 let tie = "Tie Game!"
 
-let games = prompt("How many games would you like to play?"));
+let games = prompt("How many games would you like to play?");
 for (var i = 0; i < games; i++) {
   let userSelection = prompt("Pick rock, paper, or scissors.");
   const computerSelection = computerPlay()
-  console.log(playRound(playerSelection, computerSelection))
+  console.log(playRound(userSelection, computerSelection))
   console.log("Your score = " + userScore);
   console.log("Computer's score = " + computerScore);
   console.log("Tie Games = " + tieScore);
@@ -34,39 +34,39 @@ function playRound(userSelection, computerSelection) {
   if (userSelection === "rock") {
     if (computerSelection === "paper") {
       computerScore++;
-      alert lose;
+      console.log("lose");
     } else if (computerSelection === "rock") {
       tieScore++;
-      alert tie;
+      console.log("tie");
     } else if (computerSelection === "scissors") {
       userScore++;
-      alert win;
+      console.log("win");
     }
   }
 
-if (userSelection === "scissors") {
-  if (computerSelection === "paper") {
-    userScore++;
-    alert win;
-  } else if (computerSelection === "rock") {
-    computerScore++;
-    alert lose;
-  } else if (computerSelection === "scissors") {
-    tieScore++;
-    alert tie;
+  if (userSelection === "scissors") {
+    if (computerSelection === "paper") {
+      userScore++;
+      console.log("win");
+    } else if (computerSelection === "rock") {
+      computerScore++;
+      console.log("lose");
+    } else if (computerSelection === "scissors") {
+      tieScore++;
+      console.log("tie");
+    }
   }
-}
 
-if (userSelection === "paper") {
-  if (computerSelection === "paper") {
-    tieScore++;
-    alert tie;
-  } else if (computerSelection === "rock") {
-    userScore++;
-    alert win;
-  } else if (computerSelection === "scissors") {
-    computerScore++;
-    alert lose;
+  if (userSelection === "paper") {
+    if (computerSelection === "paper") {
+      tieScore++;
+      console.log("tie");
+    } else if (computerSelection === "rock") {
+      userScore++;
+      console.log("win");
+    } else if (computerSelection === "scissors") {
+      computerScore++;
+      console.log("lose");
+    }
   }
- }
 }
